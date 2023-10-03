@@ -24,8 +24,8 @@ export default function Navbar() {
     <Container>
       <Nav className="me-auto">
         <Nav.Link href="/">Home</Nav.Link>
-        {/* <Nav.Link href="/home">Home</Nav.Link> */}
-        {/* <Nav.Link href="/privateUserProfile">Profile</Nav.Link> */}
+        <Nav.Link href="/home">Profile</Nav.Link>
+        <Nav.Link href="/signup">Sign up</Nav.Link>
         <Nav.Link href="/addIssue">Submit Issue</Nav.Link>
         
         <Nav.Link href="/viewIssue">View Issues</Nav.Link>

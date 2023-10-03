@@ -17,7 +17,7 @@ const HomePage = () => {
 
     if (!user) return (
         <div><h4>Log in to view this page.</h4></div>)
-    const { id, email, username, password,displayName,ifpa } = user
+    const { id, email, username, password } = user
     return (
         <>
             <div>
@@ -31,7 +31,7 @@ const HomePage = () => {
                 </h3>
                 <h3>
                     Your IFPA ID is 
-                    <span className='userId'> {ifpa}</span>
+                    <span className='userId'> {}</span>
                 </h3>
                 <h3>
                     Your registered email is
