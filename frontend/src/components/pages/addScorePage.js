@@ -4,14 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import getUserInfo from "../../utilities/decodeJwt";
 
 function ScoreForm() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
   const [formData, setFormData] = useState({
     machine: '',
-    name: '',
+    name: '', // Remove the name field
     score: '',
   });
   useEffect(() => {
-    setUser(getUserInfo())
+    setUser(getUserInfo());
   }, []);
   const [machineOptions, setMachineOptions] = useState([]);
 
@@ -50,7 +50,10 @@ function ScoreForm() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8081/score/addScore', formData);
+      await axios.post('http://localhost:8081/score/addScore', {
+        ...formData,
+        name: user.displayName, // Set the name to user.displayName
+      });
       alert('Score added successfully!');
       setFormData({
         machine: '',
@@ -68,7 +71,8 @@ function ScoreForm() {
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Score Form</h5>
+              <h5 className="card-title">Submit Score</h5>
+              <p>Submitting as {user.displayName}</p> {/* Add this line */}
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="machine" className="form-label">Machine:</label>
@@ -88,18 +92,7 @@ function ScoreForm() {
                     ))}
                   </select>
                 </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">Name:</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="form-control"
-                    required
-                  />
-                </div>
+                {/* Remove the name input field */}
                 <div className="mb-3">
                   <label htmlFor="score" className="form-label">Score:</label>
                   <input

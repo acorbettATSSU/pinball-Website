@@ -4,8 +4,8 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const PRIMARY_COLOR = "#cc5c99";
-const SECONDARY_COLOR = "#0c0c1f";
+const PRIMARY_COLOR = "#EDEADE";
+const SECONDARY_COLOR = "#EDEADE";
 const url = "http://localhost:8081/user/signup";
 
 const Register = () => {

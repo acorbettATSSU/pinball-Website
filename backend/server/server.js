@@ -17,6 +17,7 @@ const addMachine = require('./routes/newMachine')
 const getMachineID = require('./routes/getMachineID')
 const scoreByMacID = require('./routes/getScoreByMachine')
 //const removeIssueID = require("./routes/issues/removeIssueByID")
+const removeScoreID = require("./routes/removeScore")
 
 require('dotenv').config();
 const SERVER_PORT = 8081
@@ -38,6 +39,7 @@ app.use("/machine",allMachine)
 app.use("/machine",addMachine)
 app.use("/machine", getMachineID)
 app.use("/score",scoreByMacID)
+app.use("/score",removeScoreID)
 //app.use("/issue",removeIssueID )
 
 

@@ -74,7 +74,7 @@ function ScoreCards() {
             <Card>
               <Card.Body>
                 <Card.Title>{item.machine}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{item.name}</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">Submiter - {item.name}</Card.Subtitle>
                 <Card.Text>{item.issue}</Card.Text>
                 <Card.Text>Status: {item.status}</Card.Text>
               </Card.Body>

@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import getUserInfo from "../../utilities/decodeJwt";
 
 function IssueForm() {
   const [formData, setFormData] = useState({
     machine: '',
-    name: '',
+    name: '', // Remove the name field
     issue: '',
     status: 'open',
   });
+  const [user, setUser] = useState({});
   const [machineOptions, setMachineOptions] = useState([]);
-
+  useEffect(() => {
+    setUser(getUserInfo());
+  }, []);
   useEffect(() => {
     // Fetch data from the API and format it as "Machine (year, maker)"
     axios.get('http://localhost:8081/machine/getAll')
@@ -36,11 +40,14 @@ function IssueForm() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8081/issue/addIssue', formData);
+      await axios.post('http://localhost:8081/issue/addIssue', {
+        ...formData,
+        name: user.displayName, // Set the name to user.displayName
+      });
       alert('Issue added successfully!');
       setFormData({
         machine: '',
-        name: '',
+        name: '', // Remove the name field
         issue: '',
         status: 'open',
       });
@@ -48,7 +55,7 @@ function IssueForm() {
       console.error('Error adding issue:', error);
     }
   };
-
+  if (!user) return (<div><h4>Log in to view this page.</h4></div>)
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
@@ -56,6 +63,7 @@ function IssueForm() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Issue Form</h5>
+              <p>Submitting as {user.displayName}</p> {/* Add this line */}
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="machine" className="form-label">
@@ -77,23 +85,10 @@ function IssueForm() {
                     ))}
                   </select>
                 </div>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Name:
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="form-control"
-                    required
-                  />
-                </div>
+                {/* Remove the name input field */}
                 <div className="mb-3">
                   <label htmlFor="issue" className="form-label">
-                    Issue: {}
+                    Issue:
                   </label>
                   <input
                     type="text"
