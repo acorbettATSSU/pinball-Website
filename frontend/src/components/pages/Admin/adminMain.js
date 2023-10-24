@@ -18,6 +18,10 @@ const adminMain = () => {
     <div className="card-grid">
       <p>Test</p>
       <Link to="/admin/score">Go to Admin Score Page</Link>
+      <p></p>
+      <Link to="/admin/issue">Go to Admin Issue Page</Link>     
+       <p></p>
+      <Link to="/AMtest">Go to Machine Mage Page</Link>
     </div>
   );
 };
