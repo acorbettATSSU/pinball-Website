@@ -45,6 +45,11 @@ app.use("/score",removeScoreID)
 app.use("/issue",updateIssueID)
 
 
+
+app.get("/api/welcome", (req, res) => {
+    res.status(200).send({message: "Pinball website"})
+})
+
 app.listen(SERVER_PORT, (req, res) => {
     console.log(`The backend service is running on port ${SERVER_PORT} and waiting for requests.`);
 })

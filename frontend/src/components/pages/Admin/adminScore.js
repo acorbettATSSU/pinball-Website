@@ -57,7 +57,7 @@ const ScorePage = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-3">ADMIN ONLY!!!! Scores</h1>
+      <h1 className="mb-3">ADMIN Scores</h1>
       <div className="row">
         <div className="col-md-6">
           <div className="form-group">
