@@ -7,7 +7,7 @@ function ScoreCards() {
   const [selectedStatus, setSelectedStatus] = useState('All');
 
   useEffect(() => {
-    fetch('http://localhost:8081/issue/getAll')
+    fetch(`${process.env.REACT_APP_BACKEND_SERVER_URI}/issue/getAll`)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error('Error fetching data: ', error));

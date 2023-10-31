@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
+import getUserInfo from "../../../utilities/decodeJwt";
 
 const statusOptions = ['Open', 'In Progress', 'Closed'];
 
@@ -10,7 +11,7 @@ function ScoreCards() {
   const [updatedStatuses, setUpdatedStatuses] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:8081/issue/getAll')
+    fetch(`${process.env.REACT_APP_BACKEND_SERVER_URI}/issue/getAll`)
       .then((response) => response.json())
       .then((data) => {
         const initialStatuses = {};
@@ -24,6 +25,7 @@ function ScoreCards() {
   }, []);
 
   const machineOptions = ['All', ...new Set(data.map((item) => item.machine))];
+
 
   const handleMachineSelect = (machine) => {
     setSelectedMachine(machine);
@@ -51,6 +53,18 @@ function ScoreCards() {
       (selectedStatus === 'All' || item.status === selectedStatus)
   );
 
+  const isAdmin = true; // Replace with your admin check logic
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    setUser(getUserInfo());
+  }, []);
+
+  if (user.displayName != 'adminn') {
+    return (
+      <h4>You must be an admin to view this page</h4>
+    );
+  }
   return (
     <div className="container mt-4">
       <div className="row mb-3">

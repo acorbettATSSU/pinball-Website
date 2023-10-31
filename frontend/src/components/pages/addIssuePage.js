@@ -3,6 +3,7 @@ import axios from 'axios';
 import getUserInfo from "../../utilities/decodeJwt";
 
 function IssueForm() {
+  const test = process.env.REACT_APP_BACKEND_SERVER_URI
   const [formData, setFormData] = useState({
     machine: '',
     name: '', // Remove the name field
@@ -16,7 +17,7 @@ function IssueForm() {
   }, []);
   useEffect(() => {
     // Fetch data from the API and format it as "Machine (year, maker)"
-    axios.get('http://localhost:8081/machine/getAll')
+    axios.get(`${test}/machine/getAll`)
       .then((response) => {
         const formattedMachineOptions = response.data.map((machine) => {
           return `${machine.machine} (${machine.year}, ${machine.maker})`;
@@ -24,7 +25,7 @@ function IssueForm() {
         setMachineOptions(formattedMachineOptions);
       })
       .catch((error) => {
-        console.error('Error fetching machine data:', error);
+        console.error('Error fetching machine data:', error, test);
       });
   }, []);
 
@@ -40,7 +41,8 @@ function IssueForm() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8081/issue/addIssue', {
+      await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URI}/issue/addIssue`
+      , {
         ...formData,
         name: user.displayName, // Set the name to user.displayName
       });
@@ -57,7 +59,9 @@ function IssueForm() {
   };
   if (!user) return (<div><h4>Log in to view this page.</h4></div>)
   return (
+    
     <div className="container mt-5">
+      
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">

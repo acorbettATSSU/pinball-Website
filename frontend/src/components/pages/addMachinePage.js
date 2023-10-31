@@ -21,7 +21,7 @@ const MachineForm = () => {
     e.preventDefault(); // Prevent the default form submission behavior
 
     try {
-      await axios.post("http://localhost:8081/machine/addMachine", formData);
+      await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URI}/machine/addMachine`, formData);
       alert("Machine data sent successfully!");
       // You can reset the form here if needed.
       setFormData({

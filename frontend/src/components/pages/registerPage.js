@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 
 const PRIMARY_COLOR = "#EDEADE";
 const SECONDARY_COLOR = "#EDEADE";
-const url = "http://localhost:8081/user/signup";
+const url = `${process.env.REACT_APP_BACKEND_SERVER_URI}/user/signup`;
 
 const Register = () => {
   const [data, setData] = useState({

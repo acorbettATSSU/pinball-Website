@@ -17,7 +17,7 @@ function ScoreForm() {
 
   useEffect(() => {
     // Fetch machine data from the API and populate the dropdown options
-    axios.get('http://localhost:8081/machine/getAll')
+    axios.get(`${process.env.REACT_APP_BACKEND_SERVER_URI}/machine/getAll`)
       .then(response => {
         const options = response.data.map(machine => ({
           value: machine.id,
@@ -50,7 +50,7 @@ function ScoreForm() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8081/score/addScore', {
+      await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URI}/score/addScore`, {
         ...formData,
         name: user.displayName, // Set the name to user.displayName
       });

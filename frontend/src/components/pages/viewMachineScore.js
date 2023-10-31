@@ -7,7 +7,7 @@ const ScorePage = () => {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://localhost:8081/score/getAll')
+    fetch(`${process.env.REACT_APP_BACKEND_SERVER_URI}/score/getAll`)
       .then((response) => response.json())
       .then((data) => {
         // Sort the data by score in descending order

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import getUserInfo from "../../../utilities/decodeJwt";
 
 const ScorePage = () => {
   const [scores, setScores] = useState([]);
@@ -8,7 +9,7 @@ const ScorePage = () => {
   useEffect(() => {
     // Function to fetch scores
     const fetchScores = () => {
-      fetch('http://localhost:8081/score/getAll')
+      fetch(`${process.env.REACT_APP_BACKEND_SERVER_URI}/score/getAll`)
         .then((response) => response.json())
         .then((data) => {
           // Sort the data by score in descending order
@@ -24,6 +25,7 @@ const ScorePage = () => {
 
   const uniqueMachines = [...new Set(scores.map((score) => score.machine))];
   const uniqueNames = [...new Set(scores.map((score) => score.name))];
+  
 
   const handleMachineFilterChange = (event) => {
     setFilteredMachine(event.target.value);
@@ -34,7 +36,7 @@ const ScorePage = () => {
   };
 
   const handleRemoveScore = (scoreId) => {
-    fetch(`http://localhost:8081/score/removeScore/${scoreId}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_SERVER_URI}/score/removeScore/${scoreId}`, {
       method: 'DELETE',
     })
       .then((response) => {
@@ -54,6 +56,19 @@ const ScorePage = () => {
       (!filteredMachine || score.machine === filteredMachine) &&
       (!filteredName || score.name === filteredName)
   );
+
+  const isAdmin = true; // Replace with your admin check logic
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    setUser(getUserInfo());
+  }, []);
+
+  if (user.displayName !== 'adminn') {
+    return (
+      <h4>You must be an admin to view this page</h4>
+    );
+  }
 
   return (
     <div className="container mt-4">

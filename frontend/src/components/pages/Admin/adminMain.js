@@ -3,12 +3,16 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import the Link component
 import getUserInfo from "../../../utilities/decodeJwt";
 
-const adminMain = () => {
-  
+const AdminMain = () => {
   // Check if the user is an admin (implement your logic here)
   const isAdmin = true; // Replace with your admin check logic
+  const [user, setUser] = useState({});
 
-  if (!isAdmin) {
+  useEffect(() => {
+    setUser(getUserInfo());
+  }, []);
+
+  if (user.displayName != 'adminn') {
     return (
       <h4>You must be an admin to view this page</h4>
     );
@@ -20,10 +24,10 @@ const adminMain = () => {
       <Link to="/admin/score">Go to Admin Score Page</Link>
       <p></p>
       <Link to="/admin/issue">Go to Admin Issue Page</Link>     
-       <p></p>
+      <p></p>
       <Link to="/AMtest">Go to Machine Mage Page</Link>
     </div>
   );
 };
 
-export default adminMain;
+export default AdminMain;
