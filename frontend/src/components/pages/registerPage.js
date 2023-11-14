@@ -54,7 +54,7 @@ const Register = () => {
       const response = await axios.post(url, data);
       // const {accessToken} = response.data;
       // Store token in localStorage
-      navigate("/login");
+      window.location.href = `/login?${Math.random()}`;
     } catch (error) {
       if (
         error.response &&
