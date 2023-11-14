@@ -36,6 +36,8 @@ export default function Navbar() {
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/viewIssue">View Issues</Nav.Link>
             <Nav.Link href="/mScore">View Scores</Nav.Link>
+            <Nav.Link href="/torn">Tornament Practice</Nav.Link>
+            
           </Nav>
         </Container>
       </ReactNavbar>
@@ -53,6 +55,7 @@ export default function Navbar() {
             <Nav.Link href="/viewIssue">View Issues</Nav.Link>
             <Nav.Link href="/score">Add Score</Nav.Link>
             <Nav.Link href="/mScore">View Scores</Nav.Link>
+            <Nav.Link href="/torn">Tornament Practice</Nav.Link>
             <Nav.Link href="/admin/main">Admin Page</Nav.Link>
             <Button
               onClick={(e) => handleClick(e)}
@@ -83,6 +86,7 @@ export default function Navbar() {
         <Nav.Link href="/score">Add Score</Nav.Link>
         
         <Nav.Link href="/mScore">View Scores</Nav.Link>
+        <Nav.Link href="/torn">Tornament Practice</Nav.Link>
         <Button
               onClick={(e) => handleClick(e)}
               variant="secondary"
