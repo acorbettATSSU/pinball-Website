@@ -43,9 +43,9 @@ const Register = () => {
   };
   let backgroundStyling = { background: bgColor };
   let buttonStyling = {
-    background: PRIMARY_COLOR,
+    background: "black",
     borderStyle: "none",
-    color: bgColor,
+    color: "white",
   };
 
   const handleSubmit = async (e) => {
@@ -133,23 +133,7 @@ const Register = () => {
                     onChange={handleChange}
                   />
                 </Form.Group>
-                <div className="form-check form-switch">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="flexSwitchCheckDefault"
-                    onChange={() => {
-                      setLight(!light);
-                    }}
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexSwitchCheckDefault"
-                    
-                  >
-                    {bgText}
-                  </label>
-                </div>
+                
                 {error && (
                   <div style={labelStyling} className="pt-3">
                     {error}

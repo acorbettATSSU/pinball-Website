@@ -25,10 +25,11 @@ const Login = () => {
   };
   let backgroundStyling = { background: bgColor };
   let buttonStyling = {
-    background: PRIMARY_COLOR,
+    background: "black",  
     borderStyle: "none",
-    color: bgColor,
+    color: "white",       
   };
+  
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -111,17 +112,7 @@ const Login = () => {
                     </span>
                   </Form.Text>
                 </Form.Group>
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="flexSwitchCheckDefault"
-                    onChange={() => { setLight(!light) }}
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckDefault" className='text-muted'>
-                    {bgText}
-                  </label>
-                </div>
+                
                 {error && <div style={labelStyling} className='pt-3'>{error}</div>}
                 <Button
                   variant="primary"
