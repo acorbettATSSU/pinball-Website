@@ -24,7 +24,7 @@ export default function Navbar() {
   }, []);
 
   //console.log(user);
-
+//logged out
   if (!user) {
     return (
       <ReactNavbar bg="secondary" variant="dark">
@@ -43,7 +43,7 @@ export default function Navbar() {
       </ReactNavbar>
     );
   }
-
+//admin user
   if (user.displayName === 'adminn') {
     return (
       <ReactNavbar bg="danger" variant="dark">
@@ -69,6 +69,7 @@ export default function Navbar() {
       </ReactNavbar>
     );
   }
+  //logged in user
   return (
     <ReactNavbar bg="secondary" variant="dark">
     <Container>
@@ -76,9 +77,7 @@ export default function Navbar() {
       <Nav.Link href="">U</Nav.Link>
         <Nav.Link href="/">Home</Nav.Link>
         {/* <Nav.Link href="/home">Profile</Nav.Link> */}
-        <Nav.Link href="/signup">Sign up</Nav.Link>
-        <Nav.Link href="/login">Login</Nav.Link>
-        
+     
         <Nav.Link href="/addIssue">Submit Issue</Nav.Link>
         
         <Nav.Link href="/viewIssue">View Issues</Nav.Link>

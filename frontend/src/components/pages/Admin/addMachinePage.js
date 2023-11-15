@@ -4,9 +4,9 @@ import axios from "axios";
 
 const MachineForm = () => {
   const [formData, setFormData] = useState({
-    machineName: "",
+    machine: "",
     year: "",
-    creator: "",
+    maker: "",
   });
 
   const handleChange = (e) => {
@@ -25,13 +25,13 @@ const MachineForm = () => {
       alert("Machine data sent successfully!");
       // You can reset the form here if needed.
       setFormData({
-        machineName: "",
+        machine: "",
         year: "",
-        creator: "",
+        maker: "",
       });
     } catch (error) {
       console.error("Error sending data:", error);
-    }
+    }  
   };
 
   return (
@@ -40,15 +40,15 @@ const MachineForm = () => {
         <h5 className="card-title">Add Machine</h5>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="machineName" className="form-label">
-              Machine Name
+            <label htmlFor="machine" className="form-label">
+              Machine Name.
             </label>
             <input
               type="text"
               className="form-control"
-              id="machineName"
-              name="machineName"
-              value={formData.machineName}
+              id="machine"
+              name="machine"
+              value={formData.machine}
               onChange={handleChange}
             />
           </div>
@@ -66,15 +66,15 @@ const MachineForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="creator" className="form-label">
-              Creator
+            <label htmlFor="maker" className="form-label">
+              Maker
             </label>
             <input
               type="text"
               className="form-control"
-              id="creator"
-              name="creator"
-              value={formData.creator}
+              id="maker"
+              name="maker"
+              value={formData.maker}
               onChange={handleChange}
             />
           </div>

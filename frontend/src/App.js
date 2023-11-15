@@ -15,7 +15,7 @@ import AddScore from "./components/pages/addScorePage";
 import ViewMScore from "./components/pages/viewMachineScore";
 import AddIssue from "./components/pages/addIssuePage";
 import ViewIssue from "./components/pages/viewIssuesPage";
-import AddMachine from "./components/pages/addMachinePage"
+import AddMachine from "./components/pages/Admin/addMachinePage" 
 import AdminMain from "./components/pages/Admin/adminMain"
 import AdminScores from "./components/pages/Admin/adminScore"
 import AdminIssue from "./components/pages/Admin/adminIssue"

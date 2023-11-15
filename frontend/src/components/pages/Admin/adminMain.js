@@ -32,7 +32,7 @@ if(!user){
       <p></p>
       <Link to="/admin/issue">Go to Admin Issue Page</Link>     
       <p></p>
-      <Link to="/AMtest">Go to Machine Mage Page</Link>
+      <Link to="/AMtest">Go to Add Machine Page</Link>
     </div>
   );
 };

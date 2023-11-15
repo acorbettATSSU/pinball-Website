@@ -94,7 +94,7 @@ const TournamentPractice = () => {
   };
 
   return (
-    <Container className="d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
+    <Container className="d-flex  justify-content-center" style={{ height: '100vh' }}>
       <div>
         <h1>Tournament Practice</h1>
 
@@ -141,15 +141,15 @@ const TournamentPractice = () => {
             <Row>
               <Col>
                 <p>Player 1:</p>
-                <p>{adjustedScores.subtracted.toFixed(2)}</p>
+                <p>{Math.round(adjustedScores.subtracted)}</p>
               </Col>
               <Col>
                 <p>Player 2:</p>
-                <p>{adjustedScores.normal.toFixed(2)}</p>
+                <p>{Math.round(adjustedScores.normal)}</p>
               </Col>
               <Col>
                 <p>Player 3:</p>
-                <p>{adjustedScores.added.toFixed(2)}</p>
+                <p>{Math.round(adjustedScores.added)}</p>
               </Col>
               <Col>
                 <p>You:</p>
