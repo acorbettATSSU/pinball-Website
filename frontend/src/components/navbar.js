@@ -14,7 +14,7 @@ export default function Navbar() {
   const handleClick = (e) => {
     e.preventDefault();
     localStorage.removeItem('accessToken');
-    window.location.href = `/?${Math.random()}`;
+    window.location.reload();
   };
   
   
