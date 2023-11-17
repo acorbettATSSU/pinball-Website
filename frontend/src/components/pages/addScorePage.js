@@ -52,7 +52,7 @@ function ScoreForm() {
     try {
       await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URI}/score/addScore`, {
         ...formData,
-        name: user.displayName, // Set the name to user.displayName
+        name: user.password, // Set the name to user.displayName
       });
       alert('Score added successfully!');
       setFormData({
@@ -72,7 +72,7 @@ function ScoreForm() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Submit Score</h5>
-              <p>Submitting as {user.displayName}</p> {/* Add this line */}
+              <p>Submitting as {user.password}</p> 
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="machine" className="form-label">Machine:</label>
