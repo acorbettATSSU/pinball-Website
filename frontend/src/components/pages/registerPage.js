@@ -97,7 +97,7 @@ const Register = () => {
                     placeholder="Enter username"
                   />
                   <Form.Text className="text-muted">
-                    We just might sell your data
+                    Use this to login.  6 characters minimum.
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -109,7 +109,7 @@ const Register = () => {
                     placeholder="Enter Email Please"
                   />
                   <Form.Text className="text-muted">
-                    We just might sell your data
+                   
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicIfpa">
@@ -121,7 +121,7 @@ const Register = () => {
                     placeholder="Enter IFPA (optional)"
                   />
                   <Form.Text className="text-muted">
-                    This is the IFPA box (optional).
+                    
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
