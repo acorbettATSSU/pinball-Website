@@ -30,7 +30,7 @@ export default function Navbar() {
       <ReactNavbar bg="secondary" variant="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="">N</Nav.Link>
+            
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/signup">Sign up</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
       <ReactNavbar bg="danger" variant="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="">A</Nav.Link>
+            
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/addIssue">Submit Issue</Nav.Link>
             <Nav.Link href="/viewIssue">View Issues</Nav.Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
     <ReactNavbar bg="secondary" variant="dark">
     <Container>
       <Nav className="me-auto">
-      <Nav.Link href="">U</Nav.Link>
+      
         <Nav.Link href="/">Home</Nav.Link>
         {/* <Nav.Link href="/home">Profile</Nav.Link> */}
      
