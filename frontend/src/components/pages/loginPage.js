@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import getUserInfo from "../../utilities/decodeJwt";
 
-const PRIMARY_COLOR = "#EDEADE";
+const PRIMARY_COLOR = "#000000";
 const SECONDARY_COLOR = '#EDEADE'
 const url = `${process.env.REACT_APP_BACKEND_SERVER_URI}/user/login`;
 
@@ -91,7 +91,7 @@ const Login = () => {
                     placeholder="Enter username"
                   />
                   <Form.Text className="text-muted">
-                    We just might sell your data
+                    
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">

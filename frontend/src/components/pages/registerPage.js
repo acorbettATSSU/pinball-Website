@@ -4,7 +4,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const PRIMARY_COLOR = "#EDEADE";
+const PRIMARY_COLOR = "#000000";
 const SECONDARY_COLOR = "#EDEADE";
 const url = `${process.env.REACT_APP_BACKEND_SERVER_URI}/user/signup`;
 
