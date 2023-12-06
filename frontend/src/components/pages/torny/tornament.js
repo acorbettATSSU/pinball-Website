@@ -97,6 +97,7 @@ const TournamentPractice = () => {
     <Container className="d-flex  justify-content-center" style={{ height: '100vh' }}>
       <div>
         <h1>Tournament Practice</h1>
+        <p>Find the scores you should be aiming for.</p>
 
         {!showScores ? (
           <>
@@ -152,13 +153,8 @@ const TournamentPractice = () => {
                 <p>{Math.round(adjustedScores.added)}</p>
               </Col>
               <Col>
-                <p>You:</p>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Your Score"
-                  value={yourScore}
-                  onChange={(e) => setYourScore(e.target.value)}
-                />
+                
+                
               </Col>
             </Row>
 

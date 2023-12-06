@@ -20,7 +20,7 @@ import AdminMain from "./components/pages/Admin/adminMain"
 import AdminScores from "./components/pages/Admin/adminScore"
 import AdminIssue from "./components/pages/Admin/adminIssue"
 import Torny from "./components/pages/torny/tornament"
-
+import AdminScore from "./components/pages/Admin/adminAddScore"
 export const UserContext = createContext();
 //test change
 //test again
@@ -50,6 +50,7 @@ const App = () => {
           <Route exact path="/admin/issue" element={<AdminIssue/>} />
           <Route exact path="/AMTest" element={<AddMachine />} />
           <Route exact path="/torn" element={<Torny />} />
+          <Route exact path="/admin/addScore" element={<AdminScore />} />
         </Routes>
       </UserContext.Provider>
     </>
