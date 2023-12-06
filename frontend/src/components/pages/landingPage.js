@@ -1,29 +1,61 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Card, Col, Row } from 'react-bootstrap';
+import { Container, Card, Col, Row, Carousel } from 'react-bootstrap';
+
+import image1 from '../photos/image1.jpg';
+import image2 from '../photos/image2.jpg';
+import image3 from '../photos/image3.jpg';
+import image4 from '../photos/image4.jpg';
+//this is messy, and will be BAD with a lot of images, but w/e
 
 function App() {
   return (
     <Container className="mt-5 text-center">
-      <h1>Welcome to the Pinball Web App</h1>
+      <h1>Welcome to PinScores</h1>
 
       <Row className="mt-5">
         <Col xs={12} md={6}>
-          <Card className="mb-3">
-            <Card.Img
-              variant="top"
-              src="https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/269782738_4923260361047100_6872451153850877821_n.jpg?stp=dst-jpg_p720x720&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=p1bODfetPkQAX9pYzY1&_nc_ht=scontent-bos5-1.xx&oh=00_AfBR9ZI13PdILT7H64kO-pv6CUp7QAbUI00JPoVbdqsYPg&oe=655C6F0A"
-              alt="Pinball"
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Card>
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image1}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image2}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image3}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={image4}
+                alt="Fourth slide"
+              />
+            </Carousel.Item>
+          </Carousel>
         </Col>
 
         <Col xs={12} md={6}>
           <Card className="mb-3">
             <Card.Body>
               <Card.Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+              Welcome to PinScores! Explore the exciting world of pinball machines and enjoy the thrilling experience of playing your favorite games. Whether you're a seasoned player or new to pinball, our app offers a unique and immersive journey into the world of silver balls, flippers, and bumpers.
+
+Discover a wide range of pinball machines, each with its own theme and challenges. Immerse yourself in the captivating gameplay, test your skills, and compete with friends for the highest scores. Join our community of pinball enthusiasts and share your passion for this classic arcade game.
+
+Get ready for an unforgettable pinball adventure. Start flipping those flippers and aim for high scores! Thank you for choosing PinScores.
               </Card.Text>
             </Card.Body>
           </Card>
