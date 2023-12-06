@@ -58,8 +58,8 @@ function ScoreForm() {
       });
       alert('Score added successfully!');
       setFormData({
-        machine: '',
-        name: '',
+        
+        
         score: '',
       });
     } catch (error) {
