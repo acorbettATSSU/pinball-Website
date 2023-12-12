@@ -29,7 +29,7 @@ const AdminMain = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Test</h5>
+              <h5 className="card-title">Score Page</h5>
               <Link to="/admin/score" className="btn btn-primary">Go to Admin Score Page</Link>
             </div>
           </div>
@@ -38,7 +38,7 @@ const AdminMain = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Test</h5>
+              <h5 className="card-title">Issue Page</h5>
               <Link to="/admin/issue" className="btn btn-primary">Go to Admin Issue Page</Link>
             </div>
           </div>
@@ -49,7 +49,7 @@ const AdminMain = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Test</h5>
+              <h5 className="card-title">Add Machine</h5>
               <Link to="/AMtest" className="btn btn-primary">Go to Add Machine Page</Link>
             </div>
           </div>
@@ -58,7 +58,7 @@ const AdminMain = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Test</h5>
+              <h5 className="card-title">Admin Add Score</h5>
               <Link to="/admin/addScore" className="btn btn-primary">Go to Admin Add Score Page</Link>
             </div>
           </div>
