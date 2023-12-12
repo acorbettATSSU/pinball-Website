@@ -138,7 +138,7 @@ const TournamentPractice = () => {
         ) : (
           <div className="mt-3">
             <h3>Tournament Practice for {selectedMachine}</h3>
-
+            <p>Remember to <a href="/score">Submit</a> your score!</p>
             <Row>
               <Col>
                 <p>Player 1:</p>
