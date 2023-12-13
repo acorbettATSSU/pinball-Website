@@ -52,7 +52,8 @@ function ScoreForm() {
     try {
       await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URI}/score/addScore`, {
         ...formData,
-        name: user.password, // Set the name to user.displayName
+        name: user.password, // User token got shuffled around at some point.  Display name is kept in the password field
+                            //password is encrypted. this is still bad, but not revealing anything
       });
       alert('Score added successfully!');
       setFormData({

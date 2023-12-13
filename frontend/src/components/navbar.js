@@ -44,7 +44,7 @@ export default function Navbar() {
     );
   }
 //admin user
-  if (user.displayName === 'adminn') {
+  if (user.displayName === 'admin') {
     return (
       <ReactNavbar bg="danger" variant="dark">
         <Container>

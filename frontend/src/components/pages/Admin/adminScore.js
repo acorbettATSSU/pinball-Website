@@ -68,7 +68,7 @@ const ScorePage = () => {
       <h4>you must log in</h4>
     )
   }
-  if (user.displayName !== 'adminn') {
+  if (user.displayName !== 'admin') {
     return (
       <h4>You must be an admin to view this page</h4>
     );

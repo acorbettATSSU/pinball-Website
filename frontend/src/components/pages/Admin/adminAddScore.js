@@ -74,7 +74,7 @@ function ScoreForm() {
   }
   
   
-    if (user.displayName != 'adminn') {
+    if (user.displayName != 'admin') {
       return (
         <h4>You must be an admin to view this page</h4>
       );
