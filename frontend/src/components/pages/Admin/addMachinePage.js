@@ -35,7 +35,7 @@ const MachineForm = () => {
   };
 
   return (
-    <div className="card">
+    <div className="card mx-auto" style={{ maxWidth: "400px" }}>
       <div className="card-body">
         <h5 className="card-title">Add Machine</h5>
         <form onSubmit={handleSubmit}>
