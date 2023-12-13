@@ -14,7 +14,7 @@ const newUserValidation = data => {
 //validate user request when logging in
 const userLoginValidation = data => {
   const loginValidationSchema = z.object({
-    username : z.string().min(5, 'Test Username must be 6 characters or more'),
+    username : z.string().min(5, 'Username must be 6 characters or more'),
     password: z.string().min(8, 'Password must be 8 or more characters').trim(),
   });
   return loginValidationSchema.safeParse(data)
